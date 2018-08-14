@@ -6,17 +6,19 @@ namespace Inserter
     {
         public static void InsertAscending(this LinkedList<int> list, int value)
         {
-            if (list.First == null)
+            var currentNode = list.First;
+
+            if (currentNode == null)
             {
                 list.AddLast(value);
             }
-            else if (value < list.First.Value)
+            else if (value < currentNode.Value)
             {
-                list.AddBefore(list.First, value);
+                list.AddBefore(currentNode, value);
             }
             else
             {
-                list.AddAfter(list.First, value);
+                list.AddLast(value);
             }
         }
     }
