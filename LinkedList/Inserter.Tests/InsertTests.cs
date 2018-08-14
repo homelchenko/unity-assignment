@@ -29,6 +29,7 @@ namespace Inserter.Tests
             list.InsertAscending(5);
 
             // Assert
+            Assert.Equal(3, list.First?.Value);
             Assert.Equal(5, list.First?.Next?.Value);
         }
 
@@ -43,6 +44,7 @@ namespace Inserter.Tests
 
             // Assert
             Assert.Equal(3, list.First?.Value);
+            Assert.Equal(5, list.First?.Next?.Value);
         }
 
         [Fact]
