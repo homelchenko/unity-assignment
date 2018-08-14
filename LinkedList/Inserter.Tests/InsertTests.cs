@@ -76,5 +76,19 @@ namespace Inserter.Tests
             Assert.Equal(5, list.First?.Next?.Next?.Value);
         }
 
+        [Fact]
+        public void InsertAscending_WhenLinkedListContainsSeveralItemsBiggerThanNew_ShouldContainNewItemAsFirst()
+        {
+            // Arrange
+            var list = new LinkedList<int>(new[] { 3, 5 });
+
+            // Act
+            list.InsertAscending(1);
+
+            // Assert
+            Assert.Equal(1, list.First?.Value);
+            Assert.Equal(3, list.First?.Next?.Value);
+            Assert.Equal(5, list.First?.Next?.Next?.Value);
+        }
     }
 }
