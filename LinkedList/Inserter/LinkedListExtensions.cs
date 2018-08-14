@@ -8,15 +8,15 @@ namespace Inserter
         {
             if (list.First == null)
             {
-                list.AddFirst(value);
+                list.AddLast(value);
             }
-            else if (list.First.Value < value)
+            else if (value < list.First.Value)
             {
-                list.AddAfter(list.First, value);
+                list.AddBefore(list.First, value);
             }
             else
             {
-                list.AddFirst(value);
+                list.AddAfter(list.First, value);
             }
         }
     }

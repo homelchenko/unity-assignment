@@ -43,8 +43,20 @@ namespace Inserter.Tests
 
             // Assert
             Assert.Equal(3, list.First?.Value);
-            Assert.Equal(5, list.First?.Next?.Value);
         }
 
+        [Fact]
+        public void InsertAscending_WhenLinkedListContainSameItemAsNew_ShouldContainTwoEqualItems()
+        {
+            // Arrange
+            var list = new LinkedList<int>(new[] { 5 });
+
+            // Act
+            list.InsertAscending(5);
+
+            // Assert
+            Assert.Equal(5, list.First?.Value);
+            Assert.Equal(5, list.First?.Next?.Value);
+        }
     }
 }
