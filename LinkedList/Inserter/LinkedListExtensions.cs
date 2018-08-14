@@ -8,16 +8,19 @@ namespace Inserter
         {
             var currentNode = list.First;
 
+            while (currentNode != null)
+            {
+                if (value < currentNode.Value)
+                {
+                    list.AddBefore(currentNode, value);
+                    break;
+                }
+
+                currentNode = currentNode.Next;
+            }
+
             if (currentNode == null)
-            {
-                list.AddLast(value);
-            }
-            else if (value < currentNode.Value)
-            {
-                list.AddBefore(currentNode, value);
-            }
-            else
-            {
+            { 
                 list.AddLast(value);
             }
         }

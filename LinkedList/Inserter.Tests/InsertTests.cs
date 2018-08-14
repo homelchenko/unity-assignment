@@ -90,5 +90,20 @@ namespace Inserter.Tests
             Assert.Equal(3, list.First?.Next?.Value);
             Assert.Equal(5, list.First?.Next?.Next?.Value);
         }
+
+        [Fact]
+        public void InsertAscending_WhenLinkedListContainsItemsSmallerAndBiggerThanNew_ShouldContainNewInTheMiddle()
+        {
+            // Arrange
+            var list = new LinkedList<int>(new[] { 1, 5 });
+
+            // Act
+            list.InsertAscending(3);
+
+            // Assert
+            Assert.Equal(1, list.First?.Value);
+            Assert.Equal(3, list.First?.Next?.Value);
+            Assert.Equal(5, list.First?.Next?.Next?.Value);
+        }
     }
 }
