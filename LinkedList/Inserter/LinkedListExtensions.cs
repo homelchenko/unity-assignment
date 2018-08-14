@@ -14,6 +14,10 @@ namespace Inserter
             {
                 list.AddAfter(list.First, value);
             }
+            else
+            {
+                list.AddFirst(value);
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Inserter.Tests
         }
 
         [Fact]
-        public void InsertAscending_WhenLinkedListCoinsItemSmallerThanNew_ShouldNewElementBeLast()
+        public void InsertAscending_WhenLinkedListContainsItemSmallerThanNew_ShouldNewElementBeLast()
         {
             // Arrange
             var list = new LinkedList<int>(new[] { 3 });
@@ -31,5 +31,20 @@ namespace Inserter.Tests
             // Assert
             Assert.Equal(5, list.First?.Next?.Value);
         }
+
+        [Fact]
+        public void InsertAscending_WhenLinkedListContainsItemBiggerThanNew_ShouldNewElementBeFirst()
+        {
+            // Arrange
+            var list = new LinkedList<int>(new[] { 5 });
+
+            // Act
+            list.InsertAscending(3);
+
+            // Assert
+            Assert.Equal(3, list.First?.Value);
+            Assert.Equal(5, list.First?.Next?.Value);
+        }
+
     }
 }
