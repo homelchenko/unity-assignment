@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace Fractions.Tests
 {
@@ -86,6 +87,22 @@ namespace Fractions.Tests
 
             // Assert
             Assert.Equal(new Fraction(2, 3), result);
+        }
+
+        [Fact]
+        public void WhenRightIsZero_ShouldThrow()
+        { 
+            // Arrange
+            var left = new Fraction(2, 3);
+            Fraction zero = 0;
+
+            Action divide = () =>
+            {
+                var result = left / zero;
+            };
+
+            // Act & Assert
+            Assert.Throws<DivideByZeroException>(divide);
         }
     }
 }

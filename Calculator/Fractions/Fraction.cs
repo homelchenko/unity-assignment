@@ -94,6 +94,11 @@ namespace Fractions
 
         public static Fraction operator / (Fraction left, Fraction right)
         {
+            if (right._numerator == 0)
+            { 
+                throw new DivideByZeroException("You may not divide by zero");
+            }
+
             int numerator = left._numerator * right._denominator;
             int denominator = left._denominator * right._numerator;
 
