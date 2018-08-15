@@ -94,7 +94,9 @@ namespace Fractions
             int numerator = left._numerator * right._numerator;
             int denominator = left._denominator * right._denominator;
 
-            return new Fraction(numerator, denominator);
+            Fraction unsimplified = new Fraction(numerator, denominator);
+            
+            return unsimplified.Reduce();
         }
 
         public static implicit operator Fraction(int value)

@@ -50,14 +50,28 @@ namespace Fractions.Tests
         public void WhenLeftAndRightAreFractions_ShouldReturnNewFraction()
         {
             // Arrange
-            var left = new Fraction(3, 5);
-            var right = new Fraction(2, 3);
+            var left = new Fraction(3, 7);
+            var right = new Fraction(2, 5);
 
             // Act
             Fraction result = left * right;
 
             // Assert
-            Assert.Equal(new Fraction(6, 15), result);
+            Assert.Equal(new Fraction(6, 35), result);
+        }
+
+        [Fact]
+        public void ShouldReturnReducedFraction()
+        {
+            // Arrange
+            var left = new Fraction(2, 3);
+            var right = new Fraction(3, 4);
+
+            // Act
+            Fraction result = left * right;
+
+            // Assert
+            Assert.Equal(new Fraction(1, 2), result);
         }
     }
 }
