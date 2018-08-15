@@ -49,18 +49,6 @@ namespace Fractions
             return left * right / CalculateGcd(left, right);
         }
 
-        private static int CalculateGcd(int left, int right)
-        {
-            int remainder = left % right;
-
-            if (remainder == 0)
-            {
-                return right;
-            }
-
-            return CalculateGcd(right, remainder);
-        }
-
         private Fraction BuildEquivalent(int lcm)
         {
             int numerator = lcm / _denominator * _numerator;
@@ -73,6 +61,23 @@ namespace Fractions
             int gcd = CalculateGcd(_numerator, _denominator);
 
             return new Fraction(_numerator / gcd, _denominator / gcd);
+        }
+
+        private static int CalculateGcd(int left, int right)
+        {
+            int remainder = left % right;
+
+            if (remainder == 0)
+            {
+                return right;
+            }
+
+            return CalculateGcd(right, remainder);
+        }
+
+        public static Fraction operator - (Fraction left, Fraction right)
+        {
+            return new Fraction(left._numerator);
         }
 
         public static implicit operator Fraction(int value)
