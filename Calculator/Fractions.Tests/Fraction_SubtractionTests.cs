@@ -33,6 +33,20 @@ namespace Fractions.Tests
         }
 
         [Fact]
+        public void WhenLeftIsZeroAndRightIsFraction_ShouldReturnOppositeOfRight()
+        {
+            // Arrange
+            var zeroLeft = new Fraction(0);
+            var right = new Fraction(2, 3);
+
+            // Act
+            Fraction result = zeroLeft - right;
+
+            // Assert
+            Assert.Equal(new Fraction(-2, 3), result);
+        }
+
+        [Fact]
         public void WhenBothLeftAndRightAreIntegers_ShouldReturnDifferenceAsInteger()
         {
             // Arrange
@@ -100,6 +114,20 @@ namespace Fractions.Tests
 
             // Assert
             Assert.Equal(new Fraction(1, 2), result);
+        }
+
+        [Fact]
+        public void WhenBothLeftAndRightAreNegativeFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
+        {
+            // Arrange
+            var left = new Fraction(-2, 4);
+            var right = new Fraction(1, -4);
+
+            // Act
+            Fraction result = left - right;
+
+            // Assert
+            Assert.Equal(new Fraction(-1, 4), result);
         }
     }
 }
