@@ -56,13 +56,6 @@ namespace Fractions
             return new Fraction(numerator, lcm);
         }
 
-        private Fraction Reduce()
-        {
-            int gcd = CalculateGcd(_numerator, _denominator);
-
-            return new Fraction(_numerator / gcd, _denominator / gcd);
-        }
-
         private static int CalculateGcd(int left, int right)
         {
             int remainder = left % right;
@@ -97,6 +90,18 @@ namespace Fractions
             Fraction unsimplified = new Fraction(numerator, denominator);
             
             return unsimplified.Reduce();
+        }
+
+        public static Fraction operator / (Fraction left, Fraction right)
+        {
+            return new Fraction(left._numerator, left._denominator);
+        }
+
+        private Fraction Reduce()
+        {
+            int gcd = CalculateGcd(_numerator, _denominator);
+
+            return new Fraction(_numerator / gcd, _denominator / gcd);
         }
 
         public static implicit operator Fraction(int value)
