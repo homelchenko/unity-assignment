@@ -31,5 +31,19 @@ namespace Fractions.Tests
             // Assert
             Assert.Equal(new Fraction(3, 2), result);
         }
+
+        [Fact]
+        public void AddOperator_WhenBothLeftAndRightAreIntegers_ShouldReturnSumAsInteger()
+        {
+            // Arrange
+            var left = new Fraction(3);
+            var right = new Fraction(2);
+
+            // Act
+            Fraction result = left + right;
+
+            // Assert
+            Assert.Equal(5, result);
+        }
     }
 }

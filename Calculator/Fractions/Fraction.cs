@@ -18,8 +18,10 @@ namespace Fractions
         }
 
         public static Fraction operator + (Fraction left, Fraction right)
-        { 
-            return new Fraction(left._numerator, left._denominator);
+        {
+            int numerator = left._numerator + right._numerator;
+
+            return new Fraction(numerator, left._denominator);
         }
 
         public static implicit operator Fraction(int value)
