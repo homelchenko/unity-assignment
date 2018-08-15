@@ -26,7 +26,9 @@ namespace Fractions
 
             int numerator = likeLeft._numerator + rightLeft._numerator;
 
-            return new Fraction(numerator, likeLeft._denominator);
+            var result = new Fraction(numerator, likeLeft._denominator);
+            
+            return result.Reduce();
         }
 
         private static int CalculateLcm(int left, int right)
@@ -51,6 +53,13 @@ namespace Fractions
             int numerator = lcm / _denominator * _numerator;
 
             return new Fraction(numerator, lcm);
+        }
+
+        private Fraction Reduce()
+        {
+            int gcd = CalculateGcd(_numerator, _denominator);
+
+            return new Fraction(_numerator / gcd, _denominator / gcd);
         }
 
         public static implicit operator Fraction(int value)
