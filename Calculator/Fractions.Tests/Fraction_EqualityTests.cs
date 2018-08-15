@@ -174,7 +174,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void InqualOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnFalse()
+        public void InequalOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnFalse()
         {
             // Arrange
             var left = new Fraction(1, 2);
@@ -189,7 +189,7 @@ namespace Fractions.Tests
 
 
         [Fact]
-        public void InqualOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnTrue()
+        public void InequalOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnTrue()
         {
             // Arrange
             var left = new Fraction(1, 2);
