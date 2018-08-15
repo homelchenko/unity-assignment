@@ -5,7 +5,7 @@ namespace Fractions.Tests
     public class Fraction_AddOperatorTests
     {
         [Fact]
-        public void AddOperator_WhenLeftIsIntegerAndRightFractionIsZero_ShouldReturnLeft()
+        public void WhenLeftIsIntegerAndRightFractionIsZero_ShouldReturnLeft()
         {
             // Arrange
             var left = new Fraction(3);
@@ -19,7 +19,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenLeftIsFractionAndRightFractionIsZero_ShouldReturnLeft()
+        public void WhenLeftIsFractionAndRightFractionIsZero_ShouldReturnLeft()
         {
             // Arrange
             var left = new Fraction(3, 2);
@@ -33,7 +33,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreIntegers_ShouldReturnSumAsInteger()
+        public void WhenBothLeftAndRightAreIntegers_ShouldReturnSumAsInteger()
         {
             // Arrange
             var left = new Fraction(3);
@@ -47,7 +47,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreFractionsWithSameDenominator_ShouldReturnNewFractionWithSumOfNominatorsAndSameDenominator()
+        public void WhenBothLeftAndRightAreFractionsWithSameDenominator_ShouldReturnNewFractionWithSumOfNominatorsAndSameDenominator()
         {
             // Arrange
             var left = new Fraction(1, 5);
@@ -61,7 +61,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewFraction()
+        public void WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewFraction()
         {
             // Arrange
             var left = new Fraction(1, 2);
@@ -75,7 +75,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreSimpleFractionsWithDifferentDenominators_ShouldReturnNewFraction()
+        public void WhenBothLeftAndRightAreSimpleFractionsWithDifferentDenominators_ShouldReturnNewFraction()
         {
             // Arrange
             var left = new Fraction(2, 5);
@@ -89,7 +89,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
+        public void WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
         {
             // Arrange
             var left = new Fraction(1, 4);
@@ -103,7 +103,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void AddOperator_WhenBothLeftAndRightAreIntegerFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
+        public void WhenBothLeftAndRightAreNegativeFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
         {
             // Arrange
             var left = new Fraction(-1, 4);
