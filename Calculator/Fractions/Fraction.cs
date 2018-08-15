@@ -77,7 +77,7 @@ namespace Fractions
 
         public static Fraction operator - (Fraction left, Fraction right)
         {
-            return new Fraction(left._numerator);
+            return new Fraction(left._numerator, left._denominator);
         }
 
         public static implicit operator Fraction(int value)
