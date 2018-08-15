@@ -32,5 +32,60 @@ namespace Fractions.Tests
             Assert.Equal(new Fraction(2, 3), result);
         }
 
+        [Fact]
+        public void WhenBothLeftAndRightAreSimpleIntegers_ShouldReturnNewFraction()
+        { 
+            // Arrange
+            Fraction left = 2;
+            Fraction right = 3;
+
+            // Act
+            Fraction result = left / right;
+
+            // Assert
+            Assert.Equal(new Fraction(2, 3), result);
+        }
+
+        [Fact]
+        public void WhenBothLeftAndRightAreIntegersWithCommonDenominator_ShouldReturnNewReducedFraction()
+        { 
+            // Arrange
+            Fraction left = 2;
+            Fraction right = 4;
+
+            // Act
+            Fraction result = left / right;
+
+            // Assert
+            Assert.Equal(new Fraction(1, 2), result);
+        }
+
+        [Fact]
+        public void WhenBothLeftAndRightAreFractions_ShouldReturnNewFraction()
+        { 
+            // Arrange
+            Fraction left = new Fraction(1, 2);
+            Fraction right = new Fraction(3, 5);
+
+            // Act
+            Fraction result = left / right;
+
+            // Assert
+            Assert.Equal(new Fraction(5, 6), result);
+        }
+
+        [Fact]
+        public void WhenBothLeftAndRightAreFractionsWithCommonDenominators_ShouldReturnNewFraction()
+        { 
+            // Arrange
+            Fraction left = new Fraction(3, 2);
+            Fraction right = new Fraction(9, 4);
+
+            // Act
+            Fraction result = left / right;
+
+            // Assert
+            Assert.Equal(new Fraction(2, 3), result);
+        }
     }
 }

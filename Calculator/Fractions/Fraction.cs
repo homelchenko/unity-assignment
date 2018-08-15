@@ -94,7 +94,12 @@ namespace Fractions
 
         public static Fraction operator / (Fraction left, Fraction right)
         {
-            return new Fraction(left._numerator, left._denominator);
+            int numerator = left._numerator * right._denominator;
+            int denominator = left._denominator * right._numerator;
+
+            var unsimplified = new Fraction(numerator, denominator);
+
+            return unsimplified.Reduce();
         }
 
         private Fraction Reduce()
