@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Fractions.Tests
 {
-    public class Fraction_AddOperatorTests
+    public class Fraction_AdditionTests
     {
         [Fact]
         public void WhenLeftIsIntegerAndRightFractionIsZero_ShouldReturnLeft()
