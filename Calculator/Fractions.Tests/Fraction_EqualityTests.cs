@@ -146,7 +146,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void EqualOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnTrue()
+        public void EqualOperator_WhenNumeratorsAndDenominatorsSame_ShouldReturnTrue()
         {
             // Arrange
             var left = new Fraction(1, 2);
@@ -160,7 +160,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void EqualOperator_WhenNominatorsAreDenominatorsDifferent_ShouldReturnFalse()
+        public void EqualOperator_WhenNumeratorsAndDenominatorsDifferent_ShouldReturnFalse()
         {
             // Arrange
             var left = new Fraction(1, 2);
@@ -174,7 +174,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void InequalOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnFalse()
+        public void InequalOperator_WhenNumeratorsAndDenominatorsSame_ShouldReturnFalse()
         {
             // Arrange
             var left = new Fraction(1, 2);
@@ -187,9 +187,8 @@ namespace Fractions.Tests
             Assert.False(isEqual);
         }
 
-
         [Fact]
-        public void InequalOperator_WhenNominatorsAreDenominatorsSame_ShouldReturnTrue()
+        public void InequalOperator_WhenNumeratorAndDenominatorsDifferent_ShouldReturnTrue()
         {
             // Arrange
             var left = new Fraction(1, 2);

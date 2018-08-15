@@ -5,7 +5,7 @@ namespace Fractions.Tests
     public class Fraction_ToStringTests
     {
         [Fact]
-        public void ShouldIncludeBothNominatorAndDenominator()
+        public void ShouldIncludeBothNumeratorAndDenominator()
         {
             // Arrange
             var value = new Fraction(1, 2);

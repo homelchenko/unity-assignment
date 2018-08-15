@@ -47,7 +47,7 @@ namespace Fractions.Tests
         }
 
         [Fact]
-        public void WhenBothLeftAndRightAreFractionsWithSameDenominator_ShouldReturnNewFractionWithSumOfNominatorsAndSameDenominator()
+        public void WhenBothLeftAndRightAreFractionsWithSameDenominator_ShouldReturnNewFractionWithSumOfNumeratorsAndSameDenominator()
         {
             // Arrange
             var left = new Fraction(1, 5);
