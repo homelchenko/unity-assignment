@@ -45,5 +45,47 @@ namespace Fractions.Tests
             // Assert
             Assert.Equal(5, result);
         }
+
+        [Fact]
+        public void AddOperator_WhenBothLeftAndRightAreFractionsWithSameDenominator_ShouldReturnNewFractionWithSumOfNominatorsAndSameDenominator()
+        {
+            // Arrange
+            var left = new Fraction(1, 5);
+            var right = new Fraction(2, 5);
+
+            // Act
+            Fraction result = left + right;
+
+            // Assert
+            Assert.Equal(new Fraction(3, 5), result);
+        }
+
+        [Fact]
+        public void AddOperator_WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewFraction()
+        {
+            // Arrange
+            var left = new Fraction(1, 2);
+            var right = new Fraction(1, 4);
+
+            // Act
+            Fraction result = left + right;
+
+            // Assert
+            Assert.Equal(new Fraction(3, 4), result);
+        }
+
+        [Fact]
+        public void AddOperator_WhenBothLeftAndRightAreSimpleFractionsWithDifferentDenominators_ShouldReturnNewFraction()
+        {
+            // Arrange
+            var left = new Fraction(2, 5);
+            var right = new Fraction(3, 7);
+
+            // Act
+            Fraction result = left + right;
+
+            // Assert
+            Assert.Equal(new Fraction(29, 35), result);
+        }
     }
 }

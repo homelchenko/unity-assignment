@@ -19,9 +19,38 @@ namespace Fractions
 
         public static Fraction operator + (Fraction left, Fraction right)
         {
-            int numerator = left._numerator + right._numerator;
+            int lcm = CalculateLcm(left._denominator, right._denominator);
+            
+            Fraction likeLeft = left.BuildEquivalent(lcm);
+            Fraction rightLeft = right.BuildEquivalent(lcm);
 
-            return new Fraction(numerator, left._denominator);
+            int numerator = likeLeft._numerator + rightLeft._numerator;
+
+            return new Fraction(numerator, likeLeft._denominator);
+        }
+
+        private static int CalculateLcm(int left, int right)
+        {
+            return left * right / CalculateGcd(left, right);
+        }
+
+        private static int CalculateGcd(int left, int right)
+        {
+            int remainder = left % right;
+
+            if (remainder == 0)
+            {
+                return right;
+            }
+
+            return CalculateGcd(right, remainder);
+        }
+
+        private Fraction BuildEquivalent(int lcm)
+        {
+            int numerator = lcm / _denominator * _numerator;
+
+            return new Fraction(numerator, lcm);
         }
 
         public static implicit operator Fraction(int value)
@@ -44,7 +73,7 @@ namespace Fractions
         public override int GetHashCode()
         {
             return 11 + 7 * _numerator.GetHashCode()
-                   + 7  * _denominator.GetHashCode();
+                + 7  * _denominator.GetHashCode();
         }
 
         public bool Equals(Fraction other)
