@@ -9,8 +9,21 @@ namespace Fractions
 
         public Fraction(int numerator, int denominator)
         {
-            _numerator = numerator;
-            _denominator = denominator;
+            if (denominator == 0)
+            {
+                throw new DivideByZeroException("Denominator must not be zero");
+            }
+
+            if (denominator < 0)
+            { 
+                _numerator = -numerator;
+                _denominator = -denominator;
+            }
+            else
+            {
+                _numerator = numerator;
+                _denominator = denominator;
+            }
         }
 
         public Fraction(int numerator) : this(numerator, 1)
