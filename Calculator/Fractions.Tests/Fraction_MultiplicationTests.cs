@@ -9,10 +9,10 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction (2);
-            var oneRight = new Fraction(1);
+            var one = new Fraction(1);
 
             // Act
-            Fraction result = left * oneRight;
+            Fraction result = left * one;
 
             // Assert
             Assert.Equal(2, result);
@@ -23,13 +23,27 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction (2, 3);
-            var oneRight = new Fraction(1);
+            var one = new Fraction(1);
 
             // Act
-            Fraction result = left * oneRight;
+            Fraction result = left * one;
 
             // Assert
             Assert.Equal(new Fraction(2, 3), result);
+        }
+
+        [Fact]
+        public void WhenLeftIsFractionAndRightIsZero_ShouldReturnZero()
+        {
+            // Arrange
+            var left = new Fraction (2, 3);
+            var zero = new Fraction(0);
+
+            // Act
+            Fraction result = left * zero;
+
+            // Assert
+            Assert.Equal(0, result);
         }
 
         [Fact]
@@ -58,6 +72,20 @@ namespace Fractions.Tests
 
             // Assert
             Assert.Equal(new Fraction(6, 35), result);
+        }
+
+        [Fact]
+        public void WhenLeftIsNegative_ShouldReturnNewFraction()
+        {
+            // Arrange
+            var left = new Fraction(-1, 2);
+            var right = new Fraction(2, 3);
+
+            // Act
+            Fraction result = left * right;
+
+            // Assert
+            Assert.Equal(new Fraction(-1, 3), result);
         }
 
         [Fact]
