@@ -87,5 +87,19 @@ namespace Fractions.Tests
             // Assert
             Assert.Equal(new Fraction(1, 35), result);
         }
+
+        [Fact]
+        public void WhenBothLeftAndRightAreFractionsWithDifferentDenominators_ShouldReturnNewSimplifiedFraction()
+        {
+            // Arrange
+            var left = new Fraction(3, 4);
+            var right = new Fraction(1, 4);
+
+            // Act
+            Fraction result = left - right;
+
+            // Assert
+            Assert.Equal(new Fraction(1, 2), result);
+        }
     }
 }
