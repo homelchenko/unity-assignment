@@ -19,7 +19,7 @@ namespace Fractions
 
         public static Fraction operator + (Fraction left, Fraction right)
         { 
-            return new Fraction(left._numerator);
+            return new Fraction(left._numerator, left._denominator);
         }
 
         public static implicit operator Fraction(int value)
@@ -61,5 +61,19 @@ namespace Fractions
             return !Object.Equals(left, right);
         }
 
+        public override string ToString()
+        {
+            if (_denominator == 1)
+            {
+                return $"{_numerator}";
+            }
+
+            if (_numerator == 0)
+            {
+                return "0";
+            }
+
+            return $"{_numerator} / {_denominator}";
+        }
     }   
 }
