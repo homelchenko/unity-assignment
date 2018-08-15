@@ -91,9 +91,11 @@ namespace Fractions
 
         public static Fraction operator * (Fraction left, Fraction right)
         {
-            return new Fraction(left._numerator, left._denominator);
-        }
+            int numerator = left._numerator * right._numerator;
+            int denominator = left._denominator * right._denominator;
 
+            return new Fraction(numerator, denominator);
+        }
 
         public static implicit operator Fraction(int value)
         {
