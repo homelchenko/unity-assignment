@@ -35,9 +35,9 @@ namespace Fractions
             int lcm = CalculateLcm(left._denominator, right._denominator);
             
             Fraction likeLeft = left.BuildEquivalent(lcm);
-            Fraction rightLeft = right.BuildEquivalent(lcm);
+            Fraction likeRight = right.BuildEquivalent(lcm);
 
-            int numerator = likeLeft._numerator + rightLeft._numerator;
+            int numerator = likeLeft._numerator + likeRight._numerator;
 
             var result = new Fraction(numerator, likeLeft._denominator);
             
@@ -77,7 +77,14 @@ namespace Fractions
 
         public static Fraction operator - (Fraction left, Fraction right)
         {
-            return new Fraction(left._numerator - right._numerator, left._denominator);
+            int lcm = CalculateLcm(left._denominator, right._denominator);
+            
+            Fraction likeLeft = left.BuildEquivalent(lcm);
+            Fraction likeRight = right.BuildEquivalent(lcm);
+
+            int numerator = likeLeft._numerator - likeRight._numerator;
+
+            return new Fraction(numerator, likeLeft._denominator);
         }
 
         public static implicit operator Fraction(int value)
