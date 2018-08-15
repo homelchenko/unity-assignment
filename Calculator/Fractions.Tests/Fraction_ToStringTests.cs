@@ -47,10 +47,10 @@ namespace Fractions.Tests
         public void WhenIntegerZero_ShouldReturnZero()
         {
             // Arrange
-            var value = new Fraction(0);
+            Fraction zero = 0;
 
             // Act
-            string result = value.ToString();
+            string result = zero.ToString();
 
             // Assert
             Assert.Equal("0", result);

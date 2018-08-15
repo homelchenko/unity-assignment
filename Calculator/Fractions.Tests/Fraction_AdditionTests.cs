@@ -8,8 +8,8 @@ namespace Fractions.Tests
         public void WhenLeftIsIntegerAndRightFractionIsZero_ShouldReturnLeft()
         {
             // Arrange
-            var left = new Fraction(3);
-            var zero = new Fraction(0);
+            Fraction left = 3;
+            Fraction zero = 0;
 
             // Act
             Fraction result = left + zero;
@@ -23,7 +23,7 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction(3, 2);
-            var zero = new Fraction(0);
+            Fraction zero = 0;
 
             // Act
             Fraction result = left + zero;
@@ -36,8 +36,8 @@ namespace Fractions.Tests
         public void WhenBothLeftAndRightAreIntegers_ShouldReturnSumAsInteger()
         {
             // Arrange
-            var left = new Fraction(3);
-            var right = new Fraction(2);
+            Fraction left = 3;
+            Fraction right = 2;
 
             // Act
             Fraction result = left + right;

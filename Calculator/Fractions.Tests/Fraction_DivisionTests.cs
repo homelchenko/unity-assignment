@@ -9,7 +9,7 @@ namespace Fractions.Tests
         public void WhenLeftIsIntegerAndRightIsOne_ShouldReturnLeft()
         { 
             // Arrange
-            var left = new Fraction(2);
+            Fraction left = 2;
             Fraction one = 1;
 
             // Act

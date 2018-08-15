@@ -8,8 +8,8 @@ namespace Fractions.Tests
         public void Equals_WhenEqualIntegers_ShouldReturnTrue()
         {
             // Arrange
-            var left = new Fraction(1);
-            var right = new Fraction(1);
+            Fraction left = 1;
+            Fraction right = 1;
 
             // Act
             bool isEqual = left.Equals(right);
@@ -22,8 +22,8 @@ namespace Fractions.Tests
         public void Equals_WhenDifferentIntegers_ShouldReturnFalse()
         {
             // Arrange
-            var left = new Fraction(2);
-            var right = new Fraction(3);
+            Fraction left = 2;
+            Fraction right = 3;
 
             // Act
             bool isEqual = left.Equals(right);
@@ -77,7 +77,7 @@ namespace Fractions.Tests
         public void Equals_WhenDifferentType_ShouldReturnFalse()
         {
             // Arrange
-            var value = new Fraction(1);
+            Fraction value = 1;
 
             var otherObject = new object();
 
@@ -92,7 +92,7 @@ namespace Fractions.Tests
         public void Equals_WhenOtherValueIsNull_ShouldReturnFalse()
         {
             // Arrange
-            var value = new Fraction(1);
+            Fraction value = 1;
 
             object nullValue = null;
 

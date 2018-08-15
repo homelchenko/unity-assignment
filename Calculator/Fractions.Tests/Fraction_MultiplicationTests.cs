@@ -8,8 +8,8 @@ namespace Fractions.Tests
         public void WhenLeftIsIntegerAndRightIsOne_ShouldReturnLeft()
         {
             // Arrange
-            var left = new Fraction (2);
-            var one = new Fraction(1);
+            Fraction left = 2;
+            Fraction one = 1;
 
             // Act
             Fraction result = left * one;
@@ -23,7 +23,7 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction (2, 3);
-            var one = new Fraction(1);
+            Fraction one = 1;
 
             // Act
             Fraction result = left * one;
@@ -37,7 +37,7 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction (2, 3);
-            var zero = new Fraction(0);
+            Fraction zero = 0;
 
             // Act
             Fraction result = left * zero;
@@ -50,8 +50,8 @@ namespace Fractions.Tests
         public void WhenLeftAndRightAreIntegers_ShouldReturnMultiplicationAsInteger()
         { 
             // Arrange
-            var left = new Fraction(2);
-            var right = new Fraction(3);
+            Fraction left = 2;
+            Fraction right = 3;
 
             // Act
             var result = left * right;

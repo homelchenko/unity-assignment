@@ -8,11 +8,11 @@ namespace Fractions.Tests
         public void WhenLeftIsIntegerAndRightIsZero_ShouldReturnLeft()
         {
             // Arrange
-            var left = new Fraction(2);
-            var zeroRight = new Fraction(0);
+            Fraction left = 2;
+            Fraction zero = 0;
 
             // Act
-            Fraction result = left - zeroRight;
+            Fraction result = left - zero;
 
             // Assert
             Assert.Equal(2, result);
@@ -23,10 +23,10 @@ namespace Fractions.Tests
         {
             // Arrange
             var left = new Fraction(2, 3);
-            var zeroRight = new Fraction(0);
+            Fraction zero = 0;
 
             // Act
-            Fraction result = left - zeroRight;
+            Fraction result = left - zero;
 
             // Assert
             Assert.Equal(new Fraction(2, 3), result);
@@ -36,11 +36,11 @@ namespace Fractions.Tests
         public void WhenLeftIsZeroAndRightIsFraction_ShouldReturnOppositeOfRight()
         {
             // Arrange
-            var zeroLeft = new Fraction(0);
+            Fraction zero = 0;
             var right = new Fraction(2, 3);
 
             // Act
-            Fraction result = zeroLeft - right;
+            Fraction result = zero - right;
 
             // Assert
             Assert.Equal(new Fraction(-2, 3), result);
@@ -50,8 +50,8 @@ namespace Fractions.Tests
         public void WhenBothLeftAndRightAreIntegers_ShouldReturnDifferenceAsInteger()
         {
             // Arrange
-            var left = new Fraction(3);
-            var right = new Fraction(2);
+            Fraction left = 3;
+            Fraction right = 2;
 
             // Act
             Fraction result = left - right;
