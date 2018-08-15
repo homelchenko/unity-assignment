@@ -115,6 +115,5 @@ namespace Fractions.Tests
             // Assert
             Assert.Equal(new Fraction(-1, 2), result);
         }
-
     }
 }
